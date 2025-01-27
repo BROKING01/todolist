@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Poppins", serif;
+    background-color: #101114;
+}
+h1{
+    margin-top: 100px;
+    margin-bottom: 30px;
+    font-size: 50px;
+    font-weight: 700;
+    color: #00ffc4;
+}
+.container{
+    width: 700px;
+    max-width: 100%;
+}
+#todoinput{
+    width: 100%;
+    padding: 13px 20px;
+    border-radius: 20px;
+    background-color: transparent;
+    border: 2px solid #4A4D57;
+    color: white;
+    margin-bottom: 10px;
+}
+#todoinput::placeholder{
+    color: #4A4D57;
+    font-size: 17px;
+}
+#todoinput:focus{
+    outline: none;
+}
+form{
+    position: relative;
+}
+.add{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 80%;
+    padding: 0 20px;
+    border-radius: 20px;
+    background-color: #00ffc4;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: 200ms ease-in-out;
+}
+.add:hover{
+    background-color: rgb(49, 210, 49);
+}
+li{
+    list-style: none;
+    background-color: #1C1D20;
+    color: white;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+.text{
+    flex-grow: 1;
+    color: white;
+    transition: 200ms ease-in-out;
+}
+.delet{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #00ffc4;
+}
+.delet svg{
+    fill: #4A4D57;
+    transition: 200ms ease-in-out;
+}
+.delet svg:hover{
+    fill: red;
+}
+.checkbox{
+    width: 20px;
+    height: 20px;
+    border: 2px solid #00ffc4;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    transition: 200ms ease-in-out;
+}
+input[type="checkbox"]:checked ~ .checkbox{
+    background-color: #00ffc4;
+}
+input[type="checkbox"]:checked ~ .checkbox svg{
+    fill: #1C1D20;
+}
+input[type="checkbox"]:checked ~ .text{
+    text-decoration: line-through;
+    color: #4A4D57;
+}
+input[type="checkbox"]{
+    display: none;
+}
+@media screen and (max-width: 600px) {
+    body{
+        margin: 0 10px;
+    }
+    .add{
+        position: unset;
+        width: 100%;
+        margin-bottom: 10px;
+        height: 100%;
+        padding: 15px;
+    }
+}
